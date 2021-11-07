@@ -3,9 +3,6 @@
 //the segments when drawn will be assigned corners and types and stuff
 
 function drawSegment(wF,segment,width,ctx) {
-    if(DEBUG.TRANSPARENT_SEGMENTS) {
-            ctx.fillStyle = "rgba(0,0,0,.5)";
-    }
     drawBezier(segment,width,wF,ctx);
     ctx.fillStyle = "rgba(0,0,0,1)";
 }
@@ -46,10 +43,6 @@ Stroke.prototype.drawPlain = function(ctx) {
 };
 
 Stroke.prototype.draw = function(width, ctx) {
-    if(DEBUG.DRAW_PLAIN) {
-        this.drawPlain(ctx);
-        return;
-    }
     if(this.segments.length == 1){ //Basic Stroke
         drawBasicStroke(this.segments[0],width,ctx);
     } else { //Compound stroke

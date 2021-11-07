@@ -25,17 +25,6 @@ WEIGHT = 15;
 MIN_MOUSE_DIST = 5;
 SPLIT_THRESHOLD = 8;
 SQUARE_SIZE = 300;
-
-DEBUG = {
-    "CONTROL_POINTS" : false,
-    "DRAW_POINTS" : false,
-    "ERROR_LINES" : false,
-    "STROKE_INTERNALS" : false,
-    "TANGENT_LINES" : false,
-    "CORNER_OUTLINES" : false,
-    "TRANSPARENT_SEGMENTS" : false,
-    "DRAW_PLAIN" : false
-};
     
 //--- variables ---//
 strokes = [];
@@ -45,16 +34,6 @@ currentPath = [];
 errPoint = [];
 mouseDown = false;
 
-
-
-function setDebug(name,t) {
-    DEBUG[name] = t;
-    update();
-}
-function toggleDebug(name) {
-    DEBUG[name] = !DEBUG[name];
-    update();
-}
 function drawUI() {
     context.strokeStyle = "rgb(55,55,55)";
     context.strokeRect(0,0,width,height);
@@ -74,28 +53,6 @@ function update() {
     drawUI();
     for(var i = 0; i<strokes.length; i++)
         strokes[i].draw(WEIGHT,context);
-    
-    if(DEBUG.DRAW_POINTS) { 
-        context.globalCompositeOperation = "xor";
-        var corners = detectCorners(points),
-            c = 0;
-        for(var i = 0; i<points.length; i++){
-            if(i == corners[c]) {
-                context.lineWidth = 2;
-                c++;
-            }
-            drawCircle(points[i][0],points[i][1],5,context);
-            context.lineWidth = 1;
-        }
-        context.globalCompositeOperation = "source-over";
-    }
-    if(DEBUG.ERROR_LINES) {
-        context.globalCompositeOperation = "xor";
-        console.log("Drawing error lines");
-        for(var i = 0; i<lines.length; i++)
-            drawLine(lines[i][0],lines[i][1],lines[i][2],lines[i][3],context);
-        context.globalCompositeOperation = "source-over";
-    }
 }
 
 function drawCurrentPath() {

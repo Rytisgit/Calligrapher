@@ -203,44 +203,6 @@ function drawBezier(curve,wid,wF,ctx) {
     }
     ctx.closePath();
     ctx.fill();
-    
-    //DEBUG DRAWING
-    if(DEBUG.STROKE_INTERNALS) {
-        ctx.globalCompositeOperation = "xor";
-        
-        var end = curve.getEnd();
-        for(var i = 0; i < leftPoints.length; i++) {
-            var p0 = leftPoints[i],
-                p1 = rightPoints[i];
-            ctx.beginPath();
-            ctx.moveTo(p0[0],p0[1]);
-            ctx.lineTo(p1[0],p1[1]);
-            ctx.stroke();
-        }
-        ctx.globalCompositeOperation = "source-over";
-    }
-    if(DEBUG.CONTROL_POINTS) {
-        ctx.globalCompositeOperation = "xor";
-        ctx.lineWidth = 2;
-        for(var i = 0; i < curve.controlPoints.length; i++){
-            var p = curve.controlPoints[i];
-            drawCircle(p[0],p[1],5,ctx);
-        }
-        ctx.lineWidth = 1;
-        ctx.globalCompositeOperation = "source-over";
-    }
-    
-    if(DEBUG.TANGENT_LINES) {
-        context.globalCompositeOperation = "xor";
-        console.log("Drawing tangent lines");
-        for(var i = 0; i < numPoints; i++) {
-            var t = i/numPoints,
-                pos = curve.getPoint(t),
-                tan = scale(curve.getTangentVector(t),10);
-            drawVector(tan,pos,ctx);
-        }
-        context.globalCompositeOperation = "source-over";
-    }
 }
 
 function drawBezierTransformed(p0,p1,curve,wid,wF,ctx) {

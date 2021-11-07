@@ -43,11 +43,6 @@ BezierShape.prototype.draw = function(ctx) {
     ctx.closePath();
     
     ctx.fill();
-    if(DEBUG.CORNER_OUTLINES) {
-        ctx.globalCompositeOperation = "xor";
-        ctx.stroke();
-        ctx.globalCompositeOperation = "source-over";
-    }
 };
 
 function Bone(points,offset) {
