@@ -123,28 +123,6 @@ function fitStroke(chord) {
     }
     
     return curves;
-    /*var ts = parameterize(chord),
-        curve = leastSquaresFit(chord,ts),
-        err = getMaxErrorPoint(chord,ts,curve),
-        errSum = sumSquaredError(chord,ts,curve);
-    console.log("Error before split",errSum);*/
-    
-    /*for(var i = 1; i <= 2; i++) {
-        console.log("reparameterize #",i);
-        ts = parameterizeByLength(chord,curve);
-        curve = leastSquaresFit(chord,ts);
-        err = getMaxErrorPoint(chord,ts,curve);
-        console.log("Max error",err);
-        console.log(sumSquaredError(chord,ts,curve));
-    }*/
-    
-    /*if(err[1]>SPLIT_THRESHOLD) {
-        var curves1 = fitStroke(chord.slice(0,err[0]+1)),
-            curves2 = fitStroke(chord.slice(err[0]));
-        return curves1.concat(curves2);
-    } //FIXME unreliable :| */
-    
-    //return [curve];
 }
 
 function splitCurve(chord,ts,curve) { //TODO FIGURE THIS FUCKING SHIT OUT

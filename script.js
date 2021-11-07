@@ -34,23 +34,9 @@ currentPath = [];
 errPoint = [];
 mouseDown = false;
 
-function drawUI() {
-    context.strokeStyle = "rgb(55,55,55)";
-    context.strokeRect(0,0,width,height);
-    
-    /*var squareX = width/2-SQUARE_SIZE/2,
-        squareY = height/2-SQUARE_SIZE/2;
-    context.lineWidth = 2;
-    context.strokeRect(squareX,squareY,SQUARE_SIZE,SQUARE_SIZE);
-    context.lineWidth = 1;
-    context.strokeRect(squareX+SQUARE_SIZE/3,squareY,SQUARE_SIZE/3,SQUARE_SIZE);
-    context.strokeRect(squareX,squareY+SQUARE_SIZE/3,SQUARE_SIZE,SQUARE_SIZE/3);
-    context.strokestyle = "rgb(0,0,0,0)";*/
-}
 
 function update() {
     context.clearRect(0,0,width,height);
-    drawUI();
     for(var i = 0; i<strokes.length; i++)
         strokes[i].draw(WEIGHT,context);
 }
@@ -62,16 +48,6 @@ function drawCurrentPath() {
         context.lineTo(currentPath[i][0],currentPath[i][1]);
     context.stroke();
 }
-
-/*function getErrorLines() {
-    var ts = parameterize(points),
-        lines = [];
-    for(var i = 0; i<points.length; i++) {
-        var bPoint = strokes[0].segments[0].getPoint(ts[i]);
-        lines.push(points[i].concat(bPoint));
-    }
-    return lines;
-}*/
 
 canvas.onmousedown = function(event) {
     mouseDown = true;
@@ -101,12 +77,7 @@ canvas.onmousemove = function(event) {
             drawCurrentPath();
         } else
             currentPath.push(mousePos);
-    } /*else {
-        var ang = getAngle(sub([300,300],mousePos));
-        update();
-        c = setArmAngles(0,ang);
-        drawCorner(c,[300,300],0,10,context);
-    }*/ 
+    } 
 };
 
 keydown = function(event) {
@@ -121,8 +92,3 @@ keydown = function(event) {
 window.addEventListener("keydown",keydown,true);
 
 update();
-
-/*for(var i = 1; i<= 9; i++) {
-    var x = 100+i*50;
-    drawCorner(this["C"+i],[x,100],0,2,context);
-}*/
