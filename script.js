@@ -38,9 +38,23 @@ currentPath = [];
 errPoint = [];
 mouseDown = false;
 
+function drawUI() {
+    context.strokeStyle = "rgb(55,55,55)";
+    context.strokeRect(0,0,width,height);
+    
+    /*var squareX = width/2-SQUARE_SIZE/2,
+        squareY = height/2-SQUARE_SIZE/2;
+    context.lineWidth = 2;
+    context.strokeRect(squareX,squareY,SQUARE_SIZE,SQUARE_SIZE);
+    context.lineWidth = 1;
+    context.strokeRect(squareX+SQUARE_SIZE/3,squareY,SQUARE_SIZE/3,SQUARE_SIZE);
+    context.strokeRect(squareX,squareY+SQUARE_SIZE/3,SQUARE_SIZE,SQUARE_SIZE/3);
+    context.strokestyle = "rgb(0,0,0,0)";*/
+}
 
 function update() {
     context.clearRect(0,0,width,height);
+    drawUI();
     for(var i = 0; i<strokes.length; i++)
         strokes[i].draw(WEIGHT,context);
 }
