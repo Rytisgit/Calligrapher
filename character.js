@@ -1,3 +1,7 @@
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 // Angle test distance
 var ANG_DIST = 0.3;
 

@@ -1,4 +1,7 @@
-
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 // (ugly) Character examples for testing
 
 //compound stroke

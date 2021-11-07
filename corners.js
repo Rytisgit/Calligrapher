@@ -1,4 +1,8 @@
 
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 /**
  * @classDescription        A shape made out of bezier curves. Hopefully connected
  * @param {Array} sections

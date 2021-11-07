@@ -1,3 +1,7 @@
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 function getLengths(chord) {
     var lens = [0]; //first is 0
     

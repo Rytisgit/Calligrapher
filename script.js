@@ -1,3 +1,7 @@
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 var canvas = document.getElementById('canvas'),
     width = canvas.width,
     height = canvas.height,

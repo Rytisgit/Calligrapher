@@ -1,4 +1,7 @@
-
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 //TODO use vectors for everything so it's less stupid
 
 // Generalized recurvsive BEZIER FUNCTIONS (why am I doing it this way I don't know)

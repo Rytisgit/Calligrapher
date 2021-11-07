@@ -1,3 +1,7 @@
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 //Stroke drawing and analysis
 //Basically, a "stroke" will be a collection of segments
 //the segments when drawn will be assigned corners and types and stuff

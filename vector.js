@@ -1,3 +1,7 @@
+/*-------------------------------------------------------------
+Created By: August Toman-Yih
+Main Git Repository: https://github.com/atomanyih/Calligrapher
+--------------------------------------------------------------*/
 // Math
 function truncate(vector, max) {
     var mag = getMag(vector);
